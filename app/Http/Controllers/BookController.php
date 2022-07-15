@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\RepositoryInterface\InterfaceRepository;
+use App\Repository\BookRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -10,9 +10,9 @@ use App\Models\Book;
 
 class BookController extends Controller 
 {
-    private InterfaceRepository $BookRepository;
+    private $BookRepository;
 
-    public function __construct(InterfaceRepository $BookRepository) 
+    public function __construct(BookRepository $BookRepository) 
     {
         $this->BookRepository = $BookRepository;
     }
