@@ -10,9 +10,4 @@ class BookRepository extends BaseRepository
     public function __construct(){
         parent::__construct(new Book);
     }
-    
-    public function deleteItem($Id) 
-    {
-        $this->model->destroy($Id);
-    }
 }

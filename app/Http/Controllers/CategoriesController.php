@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\RepositoryInterface\InterfaceRepository;
+use App\Repository\categoriesRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -10,9 +10,9 @@ use App\Models\categories;
 
 class CategoriesController extends Controller 
 {
-    private InterfaceRepository $CategoriesRepository;
+    private $CategoriesRepository;
 
-    public function __construct(InterfaceRepository $CategoriesRepository) 
+    public function __construct(categoriesRepository $CategoriesRepository) 
     {
         $this->CategoriesRepository = $CategoriesRepository;
     }

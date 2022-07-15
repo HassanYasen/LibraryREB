@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\RepositoryInterface\InterfaceRepository;
+use App\Repository\AuthorsRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -10,9 +10,9 @@ use App\Models\Author;
 
 class AuthorController extends Controller 
 {
-    private InterfaceRepository $AuthorsRepository;
+    private $AuthorsRepository;
 
-    public function __construct(InterfaceRepository $AuthorsRepository) 
+    public function __construct(AuthorsRepository $AuthorsRepository) 
     {
         $this->AuthorsRepository = $AuthorsRepository;
     }

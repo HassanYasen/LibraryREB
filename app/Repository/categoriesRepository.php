@@ -2,38 +2,12 @@
 
 namespace App\Repository;
 
-use App\RepositoryInterface\InterfaceRepository;
+use App\Repository\BaseRepository;
 use App\Models\categories;
 
-class categoriesRepository implements InterfaceRepository 
+class categoriesRepository extends BaseRepository 
 {
-    public function getAll() 
-    {
-        return categories::all();
-    }
-
-    public function getById($Id)
-    {
-        return categories::findOrFail($Id);
-    }
-
-    public function delete($Id) 
-    {
-        categories::destroy($Id);
-    }
-
-    public function create(array $Details) 
-    {
-        return categories::create($Details);
-    }
-
-    public function update($Id, array $newDetails) 
-    {
-        return categories::whereId($Id)->update($newDetails);
-    }
-
-    public function getFulfilled() 
-    {
-        return categories::where('is_fulfilled', true);
+    public function __construct(){
+        parent::__construct(new categories);
     }
 }
