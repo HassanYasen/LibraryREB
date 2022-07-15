@@ -10,5 +10,6 @@ interface InterfaceRepository
     public function create(array $Details);
     public function update($Id, array $newDetails);
     public function getFulfilled();
+
     
 }
